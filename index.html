@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>truongcobooking - Đặt Phòng Homestay Thân Thiện</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fa-solid fa-house-chimney-heart"></i> truongcobooking
+      </div>
+      <nav class="nav-links">
+        <a href="#about">Giới thiệu</a>
+        <a href="#samson">Sầm Sơn</a>
+        <a href="#sapa">Sapa</a>
+        <a href="#tamdao">Tam Đảo</a>
+        <a href="#contact">Liên hệ</a>
+        <a href="#booking" class="btn-nav">Đặt phòng</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner: Cảm xúc nghỉ ngơi, không nhắc thiết bị -->
+  <section class="hero" id="about">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="badge">Chào mừng bạn đến với truongcobooking</span>
+        <h1>Chạm Vào Nhịp Nghỉ Chậm Giữa Biển Gió, Mây Ngàn Và Rừng Thông</h1>
+        <p>Mỗi chuyến đi là một khoảng thở. Khám phá những căn homestay ấm áp tại Sầm Sơn, Sapa và Tam Đảo — nơi có bữa sáng nhẹ nhàng, chiều thư thái và không gian để bạn thật sự nghỉ ngơi.</p>
+        <div class="hero-buttons">
+          <a href="#booking" class="btn btn-primary">Đặt phòng ngay</a>
+          <a href="#samson" class="btn btn-outline">Khám phá không gian</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 1: SẦM SƠN (2 CĂN) -->
+  <section class="section container" id="samson">
+    <div class="section-header">
+      <div class="region-badge"><i class="fa-solid fa-water"></i> KHU VỰC SẦM SƠN</div>
+      <h2>Homestay Nghỉ Dưỡng Sầm Sơn</h2>
+      <p>Gần biển, đón gió lành, khởi đầu ngày mới nhẹ nhàng và thư thả</p>
+    </div>
+
+    <div class="room-grid">
+      <!-- Căn 1 Sầm Sơn (5 đánh giá) -->
+      <div class="room-card">
+        <div class="room-img-wrap">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=700&q=80" alt="Ocean Breeze Sầm Sơn">
+          <span class="room-tag">Sầm Sơn • Căn 01</span>
+        </div>
+        <button type="button" class="btn-quick-reviews" onclick="openModal('samson1')">
+          <i class="fa-solid fa-comments"></i> Xem nhận xét thực tế (5 đánh giá)
+        </button>
+        <div class="room-details">
+          <h3>Ocean Breeze - Căn Gió Biển Sầm Sơn</h3>
+          <p class="room-desc">Căn phòng ngập nắng sớm và gió biển, có ban công thoáng mát, cách bãi tắm chỉ vài phút tản bộ.</p>
+          <ul class="room-features">
+            <li><i class="fa-solid fa-mug-saucer"></i> Tặng bữa sáng nhẹ buổi đầu tiên</li>
+            <li><i class="fa-solid fa-square-parking"></i> Có chỗ để xe ô tô & xe máy rộng rãi</li>
+            <li><i class="fa-solid fa-wind"></i> Điều hòa mát dịu, ban công đón gió biển</li>
+            <li><i class="fa-solid fa-wifi"></i> Wifi ổn định, không gian sạch sẽ thoáng đãng</li>
+          </ul>
+          <div class="room-footer">
+            <div class="price-tag-box">
+              <span class="price-label">Giá niêm yết</span>
+              <span class="price-num">550.000đ</span>
+              <span class="price-unit">/ đêm</span>
+            </div>
+            <a href="#booking" class="btn-select-room" onclick="selectRoom('Ocean Breeze - Căn Gió Biển Sầm Sơn (550.000đ)')">Chọn phòng</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Căn 2 Sầm Sơn (3 đánh giá) -->
+      <div class="room-card">
+        <div class="room-img-wrap">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80" alt="Sea Villa Sầm Sơn">
+          <span class="room-tag">Sầm Sơn • Căn 02</span>
+        </div>
+        <button type="button" class="btn-quick-reviews" onclick="openModal('samson2')">
+          <i class="fa-solid fa-comments"></i> Xem nhận xét thực tế (3 đánh giá)
+        </button>
+        <div class="room-details">
+          <h3>Sea Villa - Căn Sân Vườn Sát Biển Sầm Sơn</h3>
+          <p class="room-desc">Không gian rộng cho gia đình hoặc nhóm bạn quây quần, có sân vườn xanh mát và góc ăn uống ngoài trời.</p>
+          <ul class="room-features">
+            <li><i class="fa-solid fa-utensils"></i> Bao gồm bữa sáng gia đình & tiệc trà/buffet chiều nhẹ</li>
+            <li><i class="fa-solid fa-square-parking"></i> Sân đỗ xe riêng ngay trong khuôn viên</li>
+            <li><i class="fa-solid fa-fire-burner"></i> Góc nướng BBQ ngoài trời cho buổi tối quây quần</li>
+            <li><i class="fa-solid fa-users"></i> Phù hợp nhóm 4 - 8 khách, sinh hoạt thoải mái</li>
+          </ul>
+          <div class="room-footer">
+            <div class="price-tag-box">
+              <span class="price-label">Giá niêm yết</span>
+              <span class="price-num">1.450.000đ</span>
+              <span class="price-unit">/ đêm</span>
+            </div>
+            <a href="#booking" class="btn-select-room" onclick="selectRoom('Sea Villa - Căn Sân Vườn Sát Biển Sầm Sơn (1.450.000đ)')">Chọn phòng</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 2: SAPA (1 CĂN - 3 đánh giá) -->
+  <section class="section bg-soft" id="sapa">
+    <div class="container">
+      <div class="section-header">
+        <div class="region-badge sapa-badge"><i class="fa-solid fa-mountain"></i> KHU VỰC SAPA</div>
+        <h2>Homestay Săn Mây Sapa</h2>
+        <p>Mộc mạc trong sắc gỗ ấm, dịu dàng giữa mây núi vùng cao</p>
+      </div>
+
+      <div class="room-grid single-card-grid">
+        <div class="room-card highlight-card">
+          <div class="room-img-wrap">
+            <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80" alt="Sapa Cloud House">
+            <span class="room-tag sapa">Sapa • Săn Mây</span>
+          </div>
+          <button type="button" class="btn-quick-reviews" onclick="openModal('sapa')">
+            <i class="fa-solid fa-comments"></i> Xem nhận xét thực tế (3 đánh giá)
+          </button>
+          <div class="room-details">
+            <h3>Sapa Cloud House - Phòng Gỗ Săn Mây</h3>
+            <p class="room-desc">Căn phòng gỗ ấm cúng nhìn ra thung lũng mây, lý tưởng để nhâm nhi tách nóng giữa tiết trời se lạnh.</p>
+            <ul class="room-features">
+              <li><i class="fa-solid fa-mug-hot"></i> Phục vụ bữa sáng nóng & trà thảo mộc buổi chiều</li>
+              <li><i class="fa-solid fa-square-parking"></i> Có bãi đỗ xe an toàn, dễ di chuyển</li>
+              <li><i class="fa-solid fa-temperature-arrow-up"></i> Giữ ấm tốt, nước nóng đầy đủ suốt ngày</li>
+              <li><i class="fa-solid fa-mountain-sun"></i> Ban công ngắm mây trôi buổi sớm</li>
+            </ul>
+            <div class="room-footer">
+              <div class="price-tag-box">
+                <span class="price-label">Giá niêm yết</span>
+                <span class="price-num">680.000đ</span>
+                <span class="price-unit">/ đêm</span>
+              </div>
+              <a href="#booking" class="btn-select-room" onclick="selectRoom('Sapa Cloud House - Phòng Gỗ Săn Mây (680.000đ)')">Chọn phòng</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 3: TAM ĐẢO (1 CĂN - 2 đánh giá) -->
+  <section class="section container" id="tamdao">
+    <div class="section-header">
+      <div class="region-badge tamdao-badge"><i class="fa-solid fa-tree"></i> KHU VỰC TAM ĐẢO</div>
+      <h2>Homestay Rừng Thông Tam Đảo</h2>
+      <p>Yên tĩnh dưới tán thông, mát lành cho những ngày muốn gác lại bộn bề</p>
+    </div>
+
+    <div class="room-grid single-card-grid">
+      <div class="room-card highlight-card">
+        <div class="room-img-wrap">
+          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Tam Đảo Pine">
+          <span class="room-tag tamdao">Tam Đảo • Rừng Thông</span>
+        </div>
+        <button type="button" class="btn-quick-reviews" onclick="openModal('tamdao')">
+          <i class="fa-solid fa-comments"></i> Xem nhận xét thực tế (2 đánh giá)
+        </button>
+        <div class="room-details">
+          <h3>Tam Đảo Pine - Căn Gác Mây Thông Reo</h3>
+          <p class="room-desc">Không gian nhẹ nhàng giữa rừng thông, mang lại cảm giác thư thái và riêng tư cho kỳ nghỉ cuối tuần.</p>
+          <ul class="room-features">
+            <li><i class="fa-solid fa-utensils"></i> Có bữa sáng nhẹ & buffet chiều bánh trái, đồ uống</li>
+            <li><i class="fa-solid fa-square-parking"></i> Có chỗ để xe thuận tiện cho khách tự lái</li>
+            <li><i class="fa-solid fa-couch"></i> Góc đọc sách, nghỉ ngơi yên tĩnh nhìn ra rừng thông</li>
+            <li><i class="fa-solid fa-tree"></i> Không khí trong lành, dễ chịu quanh năm</li>
+          </ul>
+          <div class="room-footer">
+            <div class="price-tag-box">
+              <span class="price-label">Giá niêm yết</span>
+              <span class="price-num">790.000đ</span>
+              <span class="price-unit">/ đêm</span>
+            </div>
+            <a href="#booking" class="btn-select-room" onclick="selectRoom('Tam Đảo Pine - Căn Gác Mây Thông Reo (790.000đ)')">Chọn phòng</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM ĐẶT PHÒNG + HỖ TRỢ ĐƯA ĐÓN TẬN NƠI -->
+  <section class="section container" id="booking">
+    <div class="booking-wrapper">
+      <div class="booking-intro">
+        <h2>Đặt Phòng Tại truongcobooking</h2>
+        <p>Chọn căn phòng bạn yêu thích, điền thông tin và đăng ký hỗ trợ đưa đón nếu cần — chúng tôi sẽ liên hệ xác nhận nhanh chóng.</p>
+        <ul class="booking-benefits">
+          <li><i class="fa-solid fa-car-side"></i> Hỗ trợ đưa đón tận nơi theo điểm hẹn & bến/ga/sân bay</li>
+          <li><i class="fa-solid fa-circle-check"></i> Giá niêm yết rõ ràng, dễ dàng lựa chọn</li>
+          <li><i class="fa-solid fa-circle-check"></i> Tư vấn chu đáo trước và trong suốt chuyến đi</li>
+        </ul>
+      </div>
+
+      <form class="booking-form" id="bookingForm" onsubmit="handleBooking(event)">
+        <div class="form-group">
+          <label for="fullname">Họ và tên *</label>
+          <input type="text" id="fullname" required placeholder="Nhập họ và tên của bạn">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Số điện thoại *</label>
+            <input type="tel" id="phone" required placeholder="Ví dụ: 0981486856">
+          </div>
+          <div class="form-group">
+            <label for="roomType">Chọn phòng lưu trú *</label>
+            <select id="roomType" required>
+              <option value="Ocean Breeze - Căn Gió Biển Sầm Sơn (550.000đ)">Sầm Sơn: Ocean Breeze (550.000đ)</option>
+              <option value="Sea Villa - Căn Sân Vườn Sát Biển Sầm Sơn (1.450.000đ)">Sầm Sơn: Sea Villa Sân Vườn (1.450.000đ)</option>
+              <option value="Sapa Cloud House - Phòng Gỗ Săn Mây (680.000đ)">Sapa: Sapa Cloud House Săn Mây (680.000đ)</option>
+              <option value="Tam Đảo Pine - Căn Gác Mây Thông Reo (790.000đ)">Tam Đảo: Tam Đảo Pine Thông Reo (790.000đ)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="checkin">Ngày nhận phòng *</label>
+            <input type="date" id="checkin" required>
+          </div>
+          <div class="form-group">
+            <label for="checkout">Ngày trả phòng *</label>
+            <input type="date" id="checkout" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pickupOption">Hỗ trợ đưa đón tận nơi</label>
+          <select id="pickupOption">
+            <option value="Tự di chuyển (có cần hướng dẫn đường & chỗ đỗ xe)">Tự di chuyển (cần hướng dẫn đường & chỗ đỗ xe)</option>
+            <option value="Cần hỗ trợ đưa đón tận nơi / điểm đón hẹn trước">Cần hỗ trợ đưa đón tận nơi (ghi rõ điểm đón ở phần ghi chú)</option>
+            <option value="Cần đón từ bến xe / ga / điểm trung chuyển gần khu nghỉ">Cần đón từ bến xe / ga / điểm trung chuyển gần khu nghỉ</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Ghi chú thêm (điểm đón, số lượng khách, giờ đến...)</label>
+          <textarea id="notes" rows="3" placeholder="Ví dụ: Cần đón tại điểm hẹn lúc 13h30, đi cùng 3 người, ăn sáng không hành..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-submit">Xác Nhận Gửi Yêu Cầu Đặt Phòng</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- LIÊN HỆ TRỰC TIẾP & FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3><i class="fa-solid fa-house-chimney-heart"></i> truongcobooking</h3>
+        <p>Không gian giới thiệu và đặt phòng homestay thân thiện tại Sầm Sơn, Sapa và Tam Đảo, hướng đến trải nghiệm nhẹ nhàng và dễ chịu.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Liên Hệ Trực Tiếp</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Nhị Khê, Thường Tín, Hà Nội</p>
+        <p><i class="fa-solid fa-phone"></i> SĐT: 0981486856</p>
+        <p><i class="fa-solid fa-envelope"></i> Email: truongnguyen12042007@gmail.com</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Thời Gian & Hỗ Trợ</h4>
+        <p><i class="fa-solid fa-clock"></i> Nhận phòng: 14:00 • Trả phòng: 12:00</p>
+        <p><i class="fa-solid fa-car-side"></i> Hỗ trợ đưa đón tận nơi khi đặt trước</p>
+        <p><i class="fa-solid fa-headset"></i> Tư vấn và xác nhận đặt phòng nhanh chóng</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Trang web do Nguyễn Bá Trường thiết kế • 0981486856 • truongnguyen12042007@gmail.com</p>
+    </div>
+  </footer>
+
+  <!-- MODAL XEM NHẬN XÉT -->
+  <div class="modal-backdrop" id="reviewModal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag" id="modalTag">Khu vực</span>
+          <h3 id="modalTitle">Nhận xét khách hàng</h3>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="modalContent"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal()">Đóng lại</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Phân bổ số lượng nhận xét tự nhiên:
+    // Ocean Breeze Sầm Sơn: 5 đánh giá | Sea Villa: 3 đánh giá | Sapa: 3 đánh giá | Tam Đảo: 2 đánh giá
+    const roomReviewsData = {
+      samson1: {
+        tag: "Sầm Sơn • Căn 01",
+        title: "Nhận Xét Thực Tế: Ocean Breeze (5 đánh giá)",
+        reviews: [
+          {
+            name: "Lê Minh Tuấn",
+            meta: "Lưu trú 2 ngày 1 đêm • Tháng 10/2026",
+            stars: "★★★★★ (5/5)",
+            badge: "Khách gia đình",
+            comment: "Phòng gần biển, sáng ra mở ban công thấy gió mát dễ chịu. Bữa sáng nhẹ gọn gàng và chỗ để xe thoải mái nên cả nhà đi rất yên tâm."
+          },
+          {
+            name: "Trần Mai Phương",
+            meta: "Lưu trú cuối tuần • Tháng 09/2026",
+            stars: "★★★★☆ (4/5)",
+            badge: "Cặp đôi",
+            comment: "Phòng sạch sẽ, sáng sủa và gần biển. Cho 4 sao vì tối cuối tuần khu vực quanh bãi tắm hơi đông vui nên có tiếng xe cộ tới khuya một chút."
+          },
+          {
+            name: "Nguyễn Văn Hùng",
+            meta: "Nghỉ ngắn ngày • Tháng 11/2026",
+            stars: "★★★★★ (5/5)",
+            badge: "Khách tự lái",
+            comment: "Chủ nhà hướng dẫn đường đi và chỗ đỗ xe rất rõ ràng. Giá 550k/đêm hợp lý, không gian gọn gàng dễ chịu."
+          },
+          {
+            name: "Hoàng Bích Ngọc",
+            meta: "Lưu trú 3 ngày 2 đêm • Tháng 08/2026",
+            stars: "★★★★☆ (4/5)",
+            badge: "Nhóm bạn",
+            comment: "Vị trí đi bộ ra biển rất tiện, phòng sạch sẽ. Trừ 1 sao vì buổi trưa nắng hơi gắt, bật điều hòa một lúc thì mát đều."
+          },
+          {
+            name: "Đỗ Thanh Sơn",
+            meta: "Cuối tuần • Tháng 10/2026",
+            stars: "★★★★★ (5/5)",
+            badge: "Khách quen",
+            comment: "Đặt phòng nhanh gọn, hỗ trợ đón điểm hẹn rất đúng giờ. Phòng thoáng và dễ ngủ, lần sau ra biển mình vẫn chọn căn này."
+          }
+        ]
+      },
+      samson2: {
+        tag: "Sầm Sơn • Căn 02",
+        title: "Nhận Xét Thực Tế: Sea Villa Sân Vườn (3 đánh giá)",
+        reviews: [
+          {
+            name: "Đỗ Quang Thái",
+            meta: "Đoàn gia đình 6 người • Tháng 10/2026",
+            stars: "★★★★★ (5/5)",
+            badge: "Gia đình",
+            comment: "Nhà rộng rãi, sân đỗ xe tiện và có cả bữa sáng lẫn buffet chiều nhẹ cho cả nhà. Buổi tối ngồi sân vườn nướng BBQ rất vui."
+          },
+          {
+            name: "Vũ Hải Đăng",
+            meta: "Nhóm bạn 5 người • Tháng 09/2026",
+            stars: "★★★★☆ (4/5)",
+            badge: "Nhóm bạn",
+            comment: "Không gian sinh hoạt chung rộng, dễ tụ tập. Cho 4 sao vì hôm đi gió biển hơi lộng lúc nướng đồ ngoài trời, còn lại mọi thứ đều ổn."
+          },
+          {
+            name: "Nguyễn Kim Ngân",
+            meta: "Lưu trú 2 đêm • Tháng 11/2026",
+            stars: "★★★★★ (5/5)",
+            badge: "Gia đình nhỏ",
+            comment: "Trẻ con thích sân vườn thoáng mát, người lớn ưng sự chu đáo khi đặt phòng và hỗ trợ đưa đón."
+          }
+        ]
+      },
+      sapa: {
+        tag: "Sapa • Săn Mây",
+        title: "Nhận Xét Thực Tế: Sapa Cloud House (3 đánh giá)",
+        reviews: [
+          {
+            name: "Bùi Thị Ánh Tuyết",
+            meta: "Lưu trú 2 đêm • Tháng 11/2026",
+            stars: "★★★★★ (5/5)",
+            badge: "Cặp đôi",
+            comment: "Phòng ốp gỗ ấm áp, sáng dậy nhìn mây tràn qua ban công rất thích. Bữa sáng và trà chiều ấm bụng giữa tiết trời se lạnh."
+          },
+          {
+            name: "Trần Quốc Bảo",
+            meta: "Đi cuối tuần • Tháng 10/2026",
+            stars: "★★★★☆ (4/5)",
+            badge: "Khách tự lái",
+            comment: "Bãi đỗ xe gọn gàng, phòng ấm và sạch. Đánh giá 4 sao vì hôm đó sương mù dày nên tầm nhìn xa bị che bớt vào buổi sáng."
+          },
+          {
+            name: "Phan Thanh Hằng",
+            meta: "Lưu trú 3 ngày • Tháng 11/2026",
+            stars: "★★★★★ (5/5)",
+            badge: "Khách nghỉ dưỡng",
+            comment: "Không gian nhẹ nhàng, yên tĩnh, rất hợp để nghỉ ngơi và thư giãn đầu óc."
+          }
+        ]
+      },
+      tamdao: {
+        tag: "Tam Đảo • Rừng Thông",
+        title: "Nhận Xét Thực Tế: Tam Đảo Pine (2 đánh giá)",
+        reviews: [
+          {
+            name: "Ngô Quang Huy",
+            meta: "Cuối tuần • Tháng 11/2026",
+            stars: "★★★★★ (5/5)",
+            badge: "Khách Hà Nội",
+            comment: "Từ Nhị Khê - Thường Tín đi lên khá tiện. Không khí mát mẻ giữa rừng thông, có bữa sáng và buffet chiều nhẹ nhàng rất hợp để nghỉ ngơi."
+          },
+          {
+            name: "Đặng Thùy Dung",
+            meta: "Lưu trú 2 ngày 1 đêm • Tháng 10/2026",
+            stars: "★★★★☆ (4/5)",
+            badge: "Nhóm bạn",
+            comment: "Phòng yên tĩnh, thoáng mát và có chỗ để xe thuận tiện. Cho 4 sao vì chiều muộn sương xuống hơi ẩm ngoài ban công, vào phòng thì rất ấm dễ chịu."
+          }
+        ]
+      }
+    };
+
+    function openModal(roomKey) {
+      const data = roomReviewsData[roomKey];
+      if (!data) return;
+
+      document.getElementById("modalTag").textContent = data.tag;
+      document.getElementById("modalTitle").textContent = data.title;
+
+      let html = "";
+      data.reviews.forEach((item) => {
+        html += `
+          <div class="review-item">
+            <div class="review-header">
+              <div>
+                <strong>${item.name}</strong>
+                <span class="user-badge">${item.badge}</span>
+                <div class="review-date">${item.meta}</div>
+              </div>
+              <div class="review-stars-box">${item.stars}</div>
+            </div>
+            <p class="review-comment">${item.comment}</p>
+          </div>
+        `;
+      });
+
+      document.getElementById("modalContent").innerHTML = html;
+      document.getElementById("reviewModal").classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      document.getElementById("reviewModal").classList.remove("show");
+      document.body.style.overflow = "auto";
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target.id === "reviewModal") {
+        closeModal();
+      }
+    }
+
+    function selectRoom(roomValue) {
+      document.getElementById("roomType").value = roomValue;
+    }
+
+    function handleBooking(event) {
+      event.preventDefault();
+      const name = document.getElementById("fullname").value;
+      const phone = document.getElementById("phone").value;
+      const room = document.getElementById("roomType").value;
+      const checkin = document.getElementById("checkin").value;
+      const checkout = document.getElementById("checkout").value;
+      const pickup = document.getElementById("pickupOption").value;
+
+      if (new Date(checkin) >= new Date(checkout)) {
+        alert("Ngày trả phòng phải sau ngày nhận phòng nhé!");
+        return;
+      }
+
+      alert(
+        `Đã gửi yêu cầu đặt phòng thành công!\n` +
+        `Khách hàng: ${name} (${phone})\n` +
+        `Phòng: ${room}\n` +
+        `Thời gian: ${checkin} đến ${checkout}\n` +
+        `Đưa đón: ${pickup}`
+      );
+      document.getElementById("bookingForm").reset();
+    }
+  </script>
+
+</body>
+</html>

@@ -308,6 +308,20 @@ body {
   color: var(--text-main);
 }
 
+.room-address {
+  font-size: 0.84rem;
+  color: var(--teal-dark);
+  background-color: #f0fdfa;
+  border-left: 3px solid var(--teal-main);
+  padding: 6px 10px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 10px;
+}
+
+.room-address i {
+  margin-right: 5px;
+}
+
 .room-desc {
   font-size: 0.9rem;
   color: var(--text-muted);

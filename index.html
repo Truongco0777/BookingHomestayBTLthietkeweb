@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>truongcobooking - Đặt Phòng Homestay Thân Thiện</title>
+  <title>truongcobooking - Đặt Phòng Homestay </title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -52,8 +52,8 @@
     <div class="room-grid">
       <!-- Căn 1 Sầm Sơn (550.000đ - 4 tiện ích - 5 đánh giá) -->
       <div class="room-card">
-        <div class="room-img-wrap">
-          <img src="image/anhhome/samson1.jpg" alt="Ocean Breeze Sầm Sơn">
+        <div class="room-img-wrap" onclick="openImageLightbox('image/anhdungchoweb/samson1.jpg', 'Ocean Breeze - Căn Gió Biển Sầm Sơn', 'Số 24 Đường Tống Duy Tân, P. Bắc Sơn, Sầm Sơn, Thanh Hóa')">
+          <img src="image/anhdungchoweb/samson1.jpg" alt="Ocean Breeze Sầm Sơn">
           <span class="room-tag">Sầm Sơn • Căn 01</span>
         </div>
         <button type="button" class="btn-quick-reviews" onclick="openModal('samson1')">
@@ -82,8 +82,8 @@
 
       <!-- Căn 2 Sầm Sơn (1.450.000đ - 7 tiện ích - 3 đánh giá) -->
       <div class="room-card">
-        <div class="room-img-wrap">
-          <img src="image/anhhome/samson2.jpg" alt="Sea Villa Sầm Sơn">
+        <div class="room-img-wrap" onclick="openImageLightbox('image/anhdungchoweb/samson2.jpg', 'Sea Villa - Căn Sân Vườn Sát Biển Sầm Sơn', 'Khu nghỉ dưỡng ven biển đường Hồ Xuân Hương, P. Trung Sơn, Sầm Sơn, Thanh Hóa')">
+          <img src="image/anhdungchoweb/samson2.jpg" alt="Sea Villa Sầm Sơn">
           <span class="room-tag">Sầm Sơn • Căn 02</span>
         </div>
         <button type="button" class="btn-quick-reviews" onclick="openModal('samson2')">
@@ -126,8 +126,8 @@
 
       <div class="room-grid single-card-grid">
         <div class="room-card highlight-card">
-          <div class="room-img-wrap">
-            <img src="image/anhhome/sapa1.jpg" alt="Sapa Cloud House">
+          <div class="room-img-wrap" onclick="openImageLightbox('image/anhdungchoweb/sapa1.jpg', 'Sapa Cloud House - Phòng Gỗ Săn Mây', 'Bản Cát Cát / Sườn đồi Mường Hoa, TT. Sa Pa, TX. Sa Pa, Lào Cai')">
+            <img src="image/anhdungchoweb/sapa1.jpg" alt="Sapa Cloud House">
             <span class="room-tag sapa">Sapa • Săn Mây</span>
           </div>
           <button type="button" class="btn-quick-reviews" onclick="openModal('sapa')">
@@ -168,8 +168,8 @@
 
     <div class="room-grid single-card-grid">
       <div class="room-card highlight-card">
-        <div class="room-img-wrap">
-          <img src="image/anhhome/tamdao1.jpg" alt="Tam Đảo Pine">
+        <div class="room-img-wrap" onclick="openImageLightbox('image/anhdungchoweb/tamdao1.jpg', 'Tam Đảo Pine - Căn Gác Mây Thông Reo', 'Tổ dân phố 2, TT. Tam Đảo, H. Tam Đảo, Vĩnh Phúc')">
+          <img src="image/anhdungchoweb/tamdao1.jpg" alt="Tam Đảo Pine">
           <span class="room-tag tamdao">Tam Đảo • Rừng Thông</span>
         </div>
         <button type="button" class="btn-quick-reviews" onclick="openModal('tamdao')">
@@ -306,6 +306,15 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" onclick="closeModal()">Đóng lại</button>
       </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX XEM ẢNH PHÒNG PHÓNG TO -->
+  <div id="imageLightbox" class="image-lightbox" onclick="closeLightboxOnBackdrop(event)">
+    <div class="lightbox-content">
+      <button type="button" class="lightbox-close" onclick="closeImageLightbox()" aria-label="Đóng ảnh">&times;</button>
+      <img id="lightboxImg" src="" alt="Xem ảnh phóng to">
+      <p id="lightboxCaption"></p>
     </div>
   </div>
 
@@ -465,6 +474,30 @@
     function closeModalOnBackdrop(e) {
       if (e.target.id === "reviewModal") {
         closeModal();
+      }
+    }
+
+    /* LIGHTBOX PHÓNG TO ẢNH PHÒNG */
+    function openImageLightbox(imgSrc, roomName, roomAddress) {
+      const lightbox = document.getElementById("imageLightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxCaption = document.getElementById("lightboxCaption");
+
+      lightboxImg.src = imgSrc;
+      lightboxCaption.textContent = `${roomName} — Địa chỉ: ${roomAddress}`;
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeImageLightbox() {
+      const lightbox = document.getElementById("imageLightbox");
+      lightbox.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+    function closeLightboxOnBackdrop(e) {
+      if (e.target.id === "imageLightbox") {
+        closeImageLightbox();
       }
     }
 

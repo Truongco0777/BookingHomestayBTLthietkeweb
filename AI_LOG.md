@@ -12,16 +12,16 @@
 ## 1. Tỷ lệ tự thực hiện & Phạm vi ứng dụng AI
 
 ### 1.1. Sinh viên tự thực hiện (~70% khối lượng)
-- **Lên ý tưởng & nghiệp vụ:** Đề xuất ý tưởng website kết nối homestay cộng đồng theo khu vực (Sầm Sơn, Sapa, Tam Đảo); xác định các tiện ích thực tế phục vụ khách du lịch (chỗ để xe ô tô, ăn sáng/buffet chiều, chính sách đưa đón tận nơi).
+- **Lên ý tưởng & nghiệp vụ:** Đề xuất ý tưởng website kết nối homestay cộng đồng theo khu vực ; xác định các tiện ích thực tế phục vụ khách du lịch
 - **Trực tiếp viết mã:** Tự tay viết cấu trúc khung HTML5 Semantic, các phân đoạn nội dung chính, bảng giá niêm yết, thông tin địa chỉ cụ thể từng căn và form đặt phòng.
-- **Thiết kế & Tinh chỉnh CSS:** Lựa chọn bảng màu dịu mắt (xanh ngọc, kem ấm), thiết lập thẻ giá nổi bật (chữ đỏ trên nhãn trắng), căn chỉnh khoảng cách, padding và bố cục các khối.
+- **Thiết kế & Tinh chỉnh CSS:** Lựa chọn bảng màu dịu mắt, thiết lập thẻ giá nổi bật , căn chỉnh khoảng cách, padding và bố cục các khối.
 - **Nội dung & Hình ảnh:** Tự soạn thảo toàn bộ đánh giá thực tế (đa dạng 4 sao, 5 sao kèm lời nhận xét chân thật); trực tiếp chuẩn bị và gán ảnh từ thư mục cục bộ `image/`.
 - **Triển khai & Kiểm thử:** Tự khởi tạo kho Git, xử lý quyền truy cập Personal Access Token trên macOS, commit theo từng mốc tiến độ và kích hoạt GitHub Pages; tự kiểm thử hiển thị trên trình duyệt Safari, Chrome và chế độ F12 Responsive.
 
 ### 1.2. Trợ lý AI hỗ trợ (~30% khối lượng)
 - Đóng vai trò như tài liệu tra cứu kỹ thuật, hỗ trợ gợi ý cú pháp CSS Grid/Flexbox và Media Queries để chống vỡ giao diện trên thiết bị di động.
 - Gợi ý đoạn logic JavaScript cơ bản để đóng/mở popup (modal) hiển thị nhận xét cho từng căn phòng mà không cần chuyển hướng trang.
-- Hỗ trợ chẩn đoán và khắc phục lỗi từ chối mật khẩu (`Authentication failed`) khi đẩy mã nguồn Git qua Terminal trên macOS.
+- Hỗ trợ chẩn đoán và khắc phục lỗi khi đẩy mã nguồn Git qua Terminal trên macOS.
 
 ---
 

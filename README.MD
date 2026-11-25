@@ -14,15 +14,15 @@
 - `css/style.css`: Định dạng màu sắc, bố cục lưới, thẻ giá và khả năng hiển thị responsive trên nhiều kích thước màn hình.
 - `image/`: Thư mục chứa hình ảnh các căn homestay do người dùng tự bổ sung.
 - `README.MD`: Tài liệu giới thiệu ý tưởng, cấu trúc và hướng dẫn mở/kiểm tra dự án.
-- `AI_LOG.md`: Nhật ký ghi nhận quá trình sử dụng công cụ AI hỗ trợ xây dựng và hoàn thiện dự án[cite: 10, 11].
+- `AI_LOG.md`: Nhật ký ghi nhận quá trình sử dụng công cụ AI hỗ trợ xây dựng và hoàn thiện dự án.
 
 ## Công nghệ sử dụng
-- **HTML5** & **CSS3** (Flexbox, CSS Grid, Media Queries)[cite: 7, 11]
+- **HTML5** & **CSS3** (Flexbox, CSS Grid, Media Queries)
 - **JavaScript** (xử lý chọn phòng, mở/đóng khung nhận xét và kiểm tra dữ liệu biểu mẫu đặt phòng)
 - **Font Awesome** & hình ảnh minh họa
 
 ## Hướng dẫn mở và kiểm tra
-1. Mở trực tiếp tệp `index.html` bằng trình duyệt web (Chrome, Safari, Edge...) hoặc truy cập qua liên kết **GitHub Pages** của repository[cite: 7, 11].
+1. Mở trực tiếp tệp `index.html` bằng trình duyệt web (Chrome, Safari, Edge...) hoặc truy cập qua liên kết **GitHub Pages** của repository.
 2. Cuộn qua các khu vực phòng, bấm nút xem nhận xét dưới ảnh để kiểm tra khung hiển thị đánh giá, thử chọn phòng và gửi biểu mẫu đặt phòng.
 3. Thu nhỏ cửa sổ trình duyệt hoặc bật chế độ thiết bị di động (Inspect / F12) để kiểm tra bố cục responsive.
 

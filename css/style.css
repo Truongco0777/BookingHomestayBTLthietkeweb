@@ -674,6 +674,7 @@ body {
   border-top: 1px solid var(--border-light);
   display: flex;
   justify-content: flex-end;
+  gap: 10px;
   background-color: #f8fafc;
 }
 
@@ -689,6 +690,124 @@ body {
 
 .btn-secondary:hover {
   background-color: #cbd5e1;
+}
+
+/* BILL / HÓA ĐƠN XÁC NHẬN */
+.bill-dialog {
+  max-width: 540px;
+}
+
+.bill-box {
+  background-color: #ffffff;
+  border: 1.5px dashed #94a3b8;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.bill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 14px;
+}
+
+.bill-brand {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--teal-main);
+}
+
+.bill-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.bill-code-box {
+  text-align: right;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.bill-code-box strong {
+  display: block;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px dashed #f1f5f9;
+}
+
+.bill-row:last-child {
+  border-bottom: none;
+}
+
+.bill-row span {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.bill-row strong {
+  text-align: right;
+  color: var(--text-main);
+}
+
+.bill-total-box {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bill-total-box span {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.bill-total-amount {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--price-red);
+}
+
+.bill-note {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--teal-dark);
+  background-color: #f0fdfa;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.btn-print-bill {
+  background-color: var(--teal-main);
+  color: var(--white);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-print-bill:hover {
+  background-color: var(--teal-dark);
 }
 
 /* LIGHTBOX PHÓNG TO ẢNH PHÒNG */
@@ -760,5 +879,35 @@ body {
   .form-row {
     flex-direction: column;
     gap: 0;
+  }
+  .bill-top,
+  .bill-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .bill-code-box,
+  .bill-row strong {
+    text-align: left;
+  }
+}
+
+@media print {
+  body > *:not(#billModal) {
+    display: none !important;
+  }
+  #billModal {
+    position: static !important;
+    display: block !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+  }
+  .modal-footer,
+  .btn-close-modal {
+    display: none !important;
+  }
+  .modal-dialog {
+    box-shadow: none !important;
+    max-height: none !important;
+    border: 1px solid #cbd5e1;
   }
 }

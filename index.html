@@ -309,6 +309,26 @@
     </div>
   </div>
 
+  <!-- MODAL BILL XÁC NHẬN ĐẶT PHÒNG -->
+  <div class="modal-backdrop" id="billModal" onclick="closeBillOnBackdrop(event)">
+    <div class="modal-dialog bill-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag">Xác nhận đặt phòng</span>
+          <h3><i class="fa-solid fa-receipt"></i> Phiếu / Bill Đặt Phòng Homestay</h3>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="closeBillModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="billContent"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn-print-bill" onclick="window.print()">
+          <i class="fa-solid fa-print"></i> In / Lưu Bill
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="closeBillModal()">Hoàn tất</button>
+      </div>
+    </div>
+  </div>
+
   <!-- LIGHTBOX XEM ẢNH PHÒNG PHÓNG TO -->
   <div id="imageLightbox" class="image-lightbox" onclick="closeLightboxOnBackdrop(event)">
     <div class="lightbox-content">
@@ -437,6 +457,17 @@
       }
     };
 
+    const roomPriceMap = {
+      "Ocean Breeze - Căn Gió Biển Sầm Sơn (550.000đ)": 550000,
+      "Sea Villa - Căn Sân Vườn Sát Biển Sầm Sơn (1.450.000đ)": 1450000,
+      "Sapa Cloud House - Phòng Gỗ Săn Mây (680.000đ)": 680000,
+      "Tam Đảo Pine - Căn Gác Mây Thông Reo (790.000đ)": 790000
+    };
+
+    function formatVND(amount) {
+      return amount.toLocaleString("vi-VN") + "đ";
+    }
+
     function openModal(roomKey) {
       const data = roomReviewsData[roomKey];
       if (!data) return;
@@ -477,6 +508,58 @@
       }
     }
 
+    function openBillModal(billInfo) {
+      const billCode = "TCB-" + Date.now().toString().slice(-6);
+      const createdAt = new Date().toLocaleString("vi-VN");
+
+      document.getElementById("billContent").innerHTML = `
+        <div class="bill-box">
+          <div class="bill-top">
+            <div>
+              <div class="bill-brand"><i class="fa-solid fa-house-chimney-heart"></i> truongcobooking</div>
+              <div class="bill-sub">Phiếu xác nhận đặt phòng & tạm tính lưu trú</div>
+            </div>
+            <div class="bill-code-box">
+              Mã phiếu
+              <strong>#${billCode}</strong>
+              <span>${createdAt}</span>
+            </div>
+          </div>
+
+          <div class="bill-row"><span>Khách hàng:</span><strong>${billInfo.name}</strong></div>
+          <div class="bill-row"><span>Số điện thoại:</span><strong>${billInfo.phone}</strong></div>
+          <div class="bill-row"><span>Phòng lưu trú:</span><strong>${billInfo.room}</strong></div>
+          <div class="bill-row"><span>Nhận / Trả phòng:</span><strong>${billInfo.checkin} → ${billInfo.checkout} (${billInfo.nights} đêm)</strong></div>
+          <div class="bill-row"><span>Đơn giá / đêm:</span><strong>${formatVND(billInfo.unitPrice)}</strong></div>
+          <div class="bill-row"><span>Hỗ trợ đưa đón:</span><strong>${billInfo.pickup}</strong></div>
+          <div class="bill-row"><span>Ghi chú:</span><strong>${billInfo.notes || "Không có"}</strong></div>
+
+          <div class="bill-total-box">
+            <span>Tổng tiền tạm tính (${billInfo.nights} đêm):</span>
+            <span class="bill-total-amount">${formatVND(billInfo.totalPrice)}</span>
+          </div>
+
+          <div class="bill-note">
+            <i class="fa-solid fa-circle-info"></i> Nhận phòng 14:00 • Trả phòng 12:00. Vui lòng chụp lại màn hình hoặc bấm <strong>In / Lưu Bill</strong> để lưu thông tin đặt phòng.
+          </div>
+        </div>
+      `;
+
+      document.getElementById("billModal").classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeBillModal() {
+      document.getElementById("billModal").classList.remove("show");
+      document.body.style.overflow = "auto";
+    }
+
+    function closeBillOnBackdrop(e) {
+      if (e.target.id === "billModal") {
+        closeBillModal();
+      }
+    }
+
     /* LIGHTBOX PHÓNG TO ẢNH PHÒNG */
     function openImageLightbox(imgSrc, roomName, roomAddress) {
       const lightbox = document.getElementById("imageLightbox");
@@ -507,25 +590,40 @@
 
     function handleBooking(event) {
       event.preventDefault();
-      const name = document.getElementById("fullname").value;
-      const phone = document.getElementById("phone").value;
+      const name = document.getElementById("fullname").value.trim();
+      const phone = document.getElementById("phone").value.trim();
       const room = document.getElementById("roomType").value;
       const checkin = document.getElementById("checkin").value;
       const checkout = document.getElementById("checkout").value;
       const pickup = document.getElementById("pickupOption").value;
+      const notes = document.getElementById("notes").value.trim();
 
-      if (new Date(checkin) >= new Date(checkout)) {
+      const checkinDate = new Date(checkin);
+      const checkoutDate = new Date(checkout);
+
+      if (checkinDate >= checkoutDate) {
         alert("Ngày trả phòng phải sau ngày nhận phòng nhé!");
         return;
       }
 
-      alert(
-        `Đã gửi yêu cầu đặt phòng thành công!\n` +
-        `Khách hàng: ${name} (${phone})\n` +
-        `Phòng: ${room}\n` +
-        `Thời gian: ${checkin} đến ${checkout}\n` +
-        `Đưa đón: ${pickup}`
-      );
+      const msPerDay = 1000 * 60 * 60 * 24;
+      const nights = Math.max(1, Math.round((checkoutDate - checkinDate) / msPerDay));
+      const unitPrice = roomPriceMap[room] || 0;
+      const totalPrice = unitPrice * nights;
+
+      openBillModal({
+        name,
+        phone,
+        room,
+        checkin,
+        checkout,
+        nights,
+        unitPrice,
+        totalPrice,
+        pickup,
+        notes
+      });
+
       document.getElementById("bookingForm").reset();
     }
   </script>
